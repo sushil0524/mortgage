@@ -3,18 +3,26 @@ package com.ing.mortgage.service;
 import com.ing.mortgage.model.CheckMortgageResponse;
 import com.ing.mortgage.model.InterestRates;
 import com.ing.mortgage.model.MortgageCheckRequest;
+import com.ing.mortgage.repository.InterestRatesRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 @Service
 public class MortgageServiceImpl implements  MortgageService{
+
+    private final InterestRatesRepository interestRatesRepository;
+
+    public MortgageServiceImpl(InterestRatesRepository interestRatesRepository) {
+        this.interestRatesRepository = interestRatesRepository;
+    }
+
     /**
      * @return
      */
     @Override
     public List<InterestRates> getInterestRates() {
-
-        return null;
+        return interestRatesRepository.findAll();
     }
 
     /**

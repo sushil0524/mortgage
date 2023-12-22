@@ -1,17 +1,27 @@
 package com.ing.mortgage.model;
 
+import jakarta.persistence.*;
+
 import java.sql.Timestamp;
 
+@Entity
+@Table
 public class InterestRates {
 
+    @Id
+    @GeneratedValue (strategy = GenerationType.AUTO)
+    private Integer id;
     Integer maturityPeriod;
     Double  interestRate;
-    Timestamp lastUpdate;
 
-    public InterestRates(Integer maturityPeriod, Double interestRate, Timestamp lastUpdate) {
+    public InterestRates(Integer id, Integer maturityPeriod, Double interestRate) {
+        this.id = id;
         this.maturityPeriod = maturityPeriod;
         this.interestRate = interestRate;
-        this.lastUpdate = lastUpdate;
+    }
+
+    public InterestRates() {
+
     }
 
     public Integer getMaturityPeriod() {
@@ -30,11 +40,13 @@ public class InterestRates {
         this.interestRate = interestRate;
     }
 
-    public Timestamp getLastUpdate() {
-        return lastUpdate;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public void setLastUpdate(Timestamp lastUpdate) {
-        this.lastUpdate = lastUpdate;
+    public Integer getId() {
+        return id;
     }
+
+
 }
