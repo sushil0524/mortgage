@@ -11,7 +11,9 @@ public class InterestRates {
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
     private Integer id;
+    @Column
     Integer maturityPeriod;
+    @Column
     Double  interestRate;
 
     public InterestRates(Integer id, Integer maturityPeriod, Double interestRate) {

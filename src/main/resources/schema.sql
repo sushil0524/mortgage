@@ -1,7 +1,7 @@
-DROP TABLE IF EXISTS INTERESTRATES;
+DROP TABLE IF EXISTS interest_rates;
 
-CREATE TABLE INTERESTRATES  (
+CREATE TABLE interest_rates  (
                                 id INTEGER AUTO_INCREMENT PRIMARY KEY,
-                                maturityPeriod INTEGER NOT NULL,
-                                interestRate DOUBLE PRECISION NOT NULL
+                                maturity_period INTEGER NOT NULL,
+                                interest_rate DOUBLE PRECISION NOT NULL
 );
