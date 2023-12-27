@@ -42,10 +42,14 @@ public class MortgageServiceImpl implements MortgageService {
     public CheckMortgageResponse checkMortgage(MortgageCheckRequest mortgageCheckRequest) {
 
         Double monthlyEMI;
+
         CheckMortgageResponse checkMortgageResponse = new CheckMortgageResponse();
         if (mortgageCheckRequest.getLoanValue() > (mortgageCheckRequest.getIncome().doubleValue() * 4)
                 && mortgageCheckRequest.getLoanValue() > mortgageCheckRequest.getHomeValue()) {
             checkMortgageResponse.setMortgageFeasible(Boolean.FALSE);
+        }
+        else {
+            checkMortgageResponse.setMortgageFeasible(Boolean.TRUE);
         }
         Double rateOfInterest = null;
         List<InterestRates> interestRatesList = interestRatesRepository.findAll();
