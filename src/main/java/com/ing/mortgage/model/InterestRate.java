@@ -2,11 +2,9 @@ package com.ing.mortgage.model;
 
 import jakarta.persistence.*;
 
-import java.sql.Timestamp;
-
 @Entity
 @Table
-public class InterestRates {
+public class InterestRate {
 
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
@@ -16,13 +14,13 @@ public class InterestRates {
     @Column
     Double  interestRate;
 
-    public InterestRates(Integer id, Integer maturityPeriod, Double interestRate) {
+    public InterestRate(Integer id, Integer maturityPeriod, Double interestRate) {
         this.id = id;
         this.maturityPeriod = maturityPeriod;
         this.interestRate = interestRate;
     }
 
-    public InterestRates() {
+    public InterestRate() {
 
     }
 

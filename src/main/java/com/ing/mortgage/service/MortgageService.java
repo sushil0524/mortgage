@@ -2,7 +2,6 @@ package com.ing.mortgage.service;
 
 import com.ing.mortgage.model.CheckMortgageResponse;
 import com.ing.mortgage.model.InterestRateDTO;
-import com.ing.mortgage.model.InterestRates;
 import com.ing.mortgage.model.MortgageCheckRequest;
 import org.springframework.stereotype.Service;
 

@@ -5,6 +5,7 @@ import com.ing.mortgage.model.MortgageCheckRequest;
 import com.ing.mortgage.service.MortgageService;
 import jakarta.validation.Valid;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -23,8 +24,9 @@ public class MortgageController {
     }
 
     @PostMapping(value = "mortgage-check",produces = MediaType.APPLICATION_JSON_VALUE)
-    public CheckMortgageResponse checkMortgage(@Valid @RequestBody MortgageCheckRequest mortgageCheckRequest){
-       return mortgageService.checkMortgage(mortgageCheckRequest);
+    public ResponseEntity<Object> checkMortgage(@Valid @RequestBody MortgageCheckRequest mortgageCheckRequest){
+       //return mortgageService.checkMortgage(mortgageCheckRequest);
+        return ResponseEntity.ok().body(mortgageService.checkMortgage(mortgageCheckRequest));
     }
 
 

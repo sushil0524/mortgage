@@ -5,11 +5,12 @@ import org.springframework.stereotype.Service;
 import java.util.function.Function;
 
 @Service
-public class InterestRateDTOMapper implements Function<InterestRates, InterestRateDTO> {
+public class InterestRateDTOMapper implements Function<InterestRate, InterestRateDTO> {
     @Override
-    public InterestRateDTO apply(InterestRates interestRates) {
+    public InterestRateDTO apply(InterestRate interestRate) {
         return new InterestRateDTO(
-                interestRates.getInterestRate()
+                interestRate.getInterestRate(),
+                interestRate.getMaturityPeriod()
         );
     }
 }
